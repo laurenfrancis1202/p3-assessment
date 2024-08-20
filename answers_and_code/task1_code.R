@@ -7,7 +7,9 @@ library(ggplot2)
 
 # UNICEF P3 assessment :: task 1
 
-wd <- "C:/Users/laure/Documents/Github/p3-assessment"
+USERNAME    <- Sys.getenv("USERNAME")
+USERPROFILE <- Sys.getenv("USERPROFILE")
+wd          <- str_glue("{USERPROFILE}/Documents/Github/p3-assessment")
 
 ## input data ----
 mnch <- read.csv(str_glue("{wd}/fusion_GLOBAL_DATAFLOW_UNICEF_1.0_.MNCH_ANC4+MNCH_SAB.csv"))
@@ -101,8 +103,6 @@ plot <-
 # see word document for summary
 ## step 3: create a visualisation ----
 
-
-
-
+# export
 write_csv(df_av, str_glue("{wd}/answers_and_code/task1_weighted_av.csv"))
 ggsave(filename = str_glue("{wd}/answers_and_code/task1_plot.png"), plot = plot, width = 10, height = 7, units = "in", dpi = 300, bg = 'white')
