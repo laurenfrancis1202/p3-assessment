@@ -29,13 +29,15 @@ mnch_clean <- mnch %>%
          indicator = str_extract(indicator_indicator, "^[^:]+"),
          indicator = str_extract(indicator, "(?<=_).+"),
          time_period = str_glue("{min(time_period_time_period)}-{max(time_period_time_period)}")) %>%
+  rename(year = time_period_time_period) %>%
   group_by(iso3c, indicator) %>%
   # filter for countries based on 3-letter iso3c and latest datapoint per country-indicator
   filter(str_length(iso3c) == 3,
-         time_period_time_period == max(time_period_time_period)) %>%
+         year == max(year)) %>%
   ungroup() %>%
   select(iso3c, 
          indicator,
+         year, 
          time_period,
          obs_val = obs_value_observation_value)
 
@@ -105,4 +107,5 @@ plot <-
 
 # export
 write_csv(df_av, str_glue("{wd}/02_answers_and_code/task1_weighted_av.csv"))
+write_csv(df, str_glue("{wd}/02_answers_and_code/task1_clean_underlying_data.csv"))
 ggsave(filename = str_glue("{wd}/02_answers_and_code/task1_plot.png"), plot = plot, width = 10, height = 7, units = "in", dpi = 300, bg = 'white')
