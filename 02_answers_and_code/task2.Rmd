@@ -197,10 +197,10 @@ coefficients_summary <- as.data.frame(model_summary$coefficients)
 knitr::kable(coefficients_summary, caption = "Model Coefficients Summary")
 ```
 
--  This chart shows the early childhood development index (ECDI) by child’s age in months (blue bars), along with the line of best fit. The summary statistics are presented in the table below. 
+-  Early childhood develpoment index (ECDI) is the percentage of children who are  are developmentally on track in at least three of the following four domains: literacy-numeracy, physical, social-emotional, and learning (MICS indicator definition). This chart shows the ECDI by child’s age in months (blue bars), along with the line of best fit. The summary statistics are presented in the table below. 
 -  The gradient of the line of best fit is positive, which indicates a positive relationship whereby as a child’s age increases, ECDI increases. Specifically, for each additional month a child has, ECDI is expected to increase by approximately `r round(coefficients_summary["child_age_months", "Estimate"], 2)` units.
 - The p-value for this gradient is less than 0.05, indicating a statistically significant relationship and that the observed results are unlikely due to random chance. 
-- This is important to know because if a child is getting older, but their ECDI is not increasing, there should be some intervention put in place to ensure the child is learning and thriving in their development.
+- This is important to know because if a child is getting older, but their not on track in their development, there should be some intervention put in place to ensure the child is learning and thriving, and reaching their potential.
 
 
 ## Domains 
@@ -258,9 +258,9 @@ knitr::kable(model_summaries, caption = "Model Coefficients Summary by Group")
 ```
 
 -  This chart shows the four educational domains that contribute to the ECDI, by child’s age in months, along with the line of best fit. The summary statistics are presented in the table below. 
--  The literacy and math domain had the strongest positive relationship with literacy and math development increasing 0.75 units per month increase in childs. This was statistically signficant (p<0.05), indicating that as a child's age increases, literacy and math skills increase the most of the four domains.
-- Learning and socio-emotional domains also had significant positive relationships with child age in months. 
--  There was no statistically significant association found between childs age in months and physical activity (p=0.5).
+-  The literacy and math domain had the strongest positive relationship with literacy and math development, increasing 0.75 units per month increase in childs. This was statistically signficant (p<0.05), indicating that as a child's age increases, literacy and math skills increase the most of the four domains.
+- Learning and socio-emotional domains also had significant positive relationships with child age in months, albeit weaker relationships. 
+-  There was no statistically significant association found between childs age in months and physical development (p=0.5).
 -  Despite these observations, physical development was considerably higher throughout 36-59 months than literacy and math indicating that children generally develop physical skills at a younger age.
 -  It is important to note that there are some variations in development indicator percentage, likely due to small sample sizes when breaking the average down by month of age. As such, results may be subject to noise and should be interpreted with this in mind.
 
