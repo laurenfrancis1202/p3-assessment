@@ -193,6 +193,10 @@ model <- lm(value_r ~ child_age_months, data = plt1_dta)
 model_summary <- summary(model)
 # coefficients table from the model summary
 coefficients_summary <- as.data.frame(model_summary$coefficients)
+# extract r-squared
+r_squared <- summary(model)$r.squared
+# add to summary
+coefficients_summary <- rbind(coefficients_summary, "R-squared" = c(r_squared, NA))
 # print in rmd
 knitr::kable(coefficients_summary, caption = "Model Coefficients Summary")
 ```
