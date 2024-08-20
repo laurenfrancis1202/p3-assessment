@@ -4,8 +4,8 @@ title: "Task 2: Data Perspective on the evolution of education for 4- to 5-year-
 author: "P3 candidate"
 date: "August 2024"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 <!-- set page width -->
@@ -48,7 +48,7 @@ wd          <- str_glue("{USERPROFILE}/Documents/Github/p3-assessment")
 zwe <- read.csv(str_glue("{wd}/01_rawdata/Zimbabwe_children_under5_interview.csv"))
 ## input data ----
 
-# the dataset includes variables used to produce the domains of the early childhood development index (ecdi), developed by UNICEF
+# the dataset includes variables used to produce the domains of the early childhood development index (ecdi), developed by UNICEF :: https://data.unicef.org/resources/early-childhood-development-index-2030-ecdi2030/
 
 ## funcs ----
 # function to calculate indicator value
