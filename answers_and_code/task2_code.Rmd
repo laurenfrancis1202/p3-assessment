@@ -38,6 +38,7 @@ library(janitor)
 library(ggplot2)
 library(plotly)
 library(broom)
+library(knitr)
 
 # set wd
 USERNAME    <- Sys.getenv("USERNAME")
