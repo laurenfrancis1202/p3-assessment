@@ -48,7 +48,7 @@ wd          <- str_glue("{USERPROFILE}/Documents/Github/p3-assessment")
 zwe <- read.csv(str_glue("{wd}/01_rawdata/Zimbabwe_children_under5_interview.csv"))
 ## input data ----
 
-# the dataset includes indicators used to produce the domains of the early childhood development index (ecdi), developed by UNICEF
+# the dataset includes variables used to produce the domains of the early childhood development index (ecdi), developed by UNICEF
 
 ## funcs ----
 # function to calculate indicator value
