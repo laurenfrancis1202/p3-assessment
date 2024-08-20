@@ -48,7 +48,7 @@ wd          <- str_glue("{USERPROFILE}/Documents/Github/p3-assessment")
 zwe <- read.csv(str_glue("{wd}/01_rawdata/Zimbabwe_children_under5_interview.csv"))
 ## input data ----
 
-# the dataset includes indicators used to produce the domains of the early childhood development index (ecdi)
+# the dataset includes indicators used to produce the domains of the early childhood development index (ecdi), developed by UNICEF
 
 ## funcs ----
 # function to calculate indicator value
@@ -186,6 +186,7 @@ plt1 <- plt1_dta %>%
 # make interactive
 ggplotly(plt1, tooltip = "text")
 
+# support from chatgpt:
 # fit the linear model and extract summary
 model <- lm(value_r ~ child_age_months, data = plt1_dta)
 model_summary <- summary(model)
@@ -238,6 +239,7 @@ plt2 <- ggplot(plt2_dta, aes(x = child_age_months, y = value_r, colour = indic))
 # make interactive
 ggplotly(plt2, tooltip = "text")
 
+# support from chatgpt:
 # fit a linear model for each group and extract summaries
 model_summaries <- plt2_dta %>%
   group_by(indic) %>%
