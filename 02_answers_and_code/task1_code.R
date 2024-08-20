@@ -50,8 +50,7 @@ wpp_clean <- rbind(wpp_est, wpp_proj) %>%
   select(iso3c = iso3_alpha_code,
          births_thousands) %>%
   # convert numeric character values to numeric
-  mutate(births_thousands = as.numeric(births_thousands)) %>%
-  filter(!is.na(births_thousands))
+  mutate(births_thousands = as.numeric(births_thousands)) 
 
 # clean u5mr classification data
 u5mr_class_clean <- u5mr_class %>%
@@ -64,7 +63,9 @@ u5mr_class_clean <- u5mr_class %>%
 df <- mnch_clean %>%
   left_join(., wpp_clean) %>%
   left_join(., u5mr_class_clean) %>%
-  filter(!is.na(u5mr_status))
+  # remove countries with missing data
+  filter(!is.na(u5mr_status),
+         !is.na(births_thousands))
 ## step 1: data preparation ----
 
 ## step 2: calculate weighted averages for on-track and off-track countries ----
