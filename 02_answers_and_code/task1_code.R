@@ -12,7 +12,7 @@ USERPROFILE <- Sys.getenv("USERPROFILE")
 wd          <- str_glue("{USERPROFILE}/Documents/Github/p3-assessment")
 
 ## input data ----
-mnch <- read.csv(str_glue("{wd}/fusion_GLOBAL_DATAFLOW_UNICEF_1.0_.MNCH_ANC4+MNCH_SAB.csv"))
+mnch <- read.csv(str_glue("{wd}/01_rawdata/fusion_GLOBAL_DATAFLOW_UNICEF_1.0_.MNCH_ANC4+MNCH_SAB.csv"))
 wpp_est <- read_excel(str_glue("{wd}/01_rawdata/WPP2022_GEN_F01_DEMOGRAPHIC_INDICATORS_COMPACT_REV1.xlsx"), sheet = "Estimates", skip = 16, col_types = c("text"))
 wpp_proj <- read_excel(str_glue("{wd}/01_rawdata/WPP2022_GEN_F01_DEMOGRAPHIC_INDICATORS_COMPACT_REV1.xlsx"), sheet = "Projections", skip = 16, col_types = c("text"))
 u5mr_class <- read_excel(str_glue("{wd}/01_rawdata/On-track and off-track countries.xlsx"))
