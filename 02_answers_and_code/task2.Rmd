@@ -43,7 +43,7 @@ library(knitr)
 # set wd
 USERNAME    <- Sys.getenv("USERNAME")
 USERPROFILE <- Sys.getenv("USERPROFILE")
-wd          <- str_glue("{USERPROFILE}/Documents/Github/p3-assessment")
+wd          <- str_glue("{USERPROFILE}/Documents/Github/p3-assessment")  # NOTE: to run this, you may have to remove "/Documents" from the string
 
 ## input data ----
 zwe <- read.csv(str_glue("{wd}/01_rawdata/Zimbabwe_children_under5_interview.csv"))
