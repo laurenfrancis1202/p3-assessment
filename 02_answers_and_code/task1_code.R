@@ -9,7 +9,7 @@ library(ggplot2)
 
 USERNAME    <- Sys.getenv("USERNAME")
 USERPROFILE <- Sys.getenv("USERPROFILE")
-wd          <- str_glue("{USERPROFILE}/Documents/Github/p3-assessment")
+wd          <- str_glue("{USERPROFILE}/Documents/Github/p3-assessment")  # NOTE: to run this, you may have to remove "/Documents" from the string
 
 ## input data ----
 mnch <- read.csv(str_glue("{wd}/01_rawdata/fusion_GLOBAL_DATAFLOW_UNICEF_1.0_.MNCH_ANC4+MNCH_SAB.csv"))
