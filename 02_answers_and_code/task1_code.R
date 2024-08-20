@@ -104,5 +104,5 @@ plot <-
 ## step 3: create a visualisation ----
 
 # export
-write_csv(df_av, str_glue("{wd}/answers_and_code/task1_weighted_av.csv"))
-ggsave(filename = str_glue("{wd}/answers_and_code/task1_plot.png"), plot = plot, width = 10, height = 7, units = "in", dpi = 300, bg = 'white')
+write_csv(df_av, str_glue("{wd}/02_answers_and_code/task1_weighted_av.csv"))
+ggsave(filename = str_glue("{wd}/02_answers_and_code/task1_plot.png"), plot = plot, width = 10, height = 7, units = "in", dpi = 300, bg = 'white')
